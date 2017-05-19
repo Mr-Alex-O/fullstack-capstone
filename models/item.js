@@ -1,9 +1,14 @@
 var mongoose = require('mongoose');
 
 var ItemSchema = new mongoose.Schema({
-    name: {type: String, required: true}
+    complete: {
+        type: Boolean,
+        default: false
+    },
+    name: {
+        type: String,
+        required: true
+    }
 });
 
-var Item = mongoose.model('Item', ItemSchema);
-
-module.exports = Item;
+module.exports = mongoose.model('Item', ItemSchema);
